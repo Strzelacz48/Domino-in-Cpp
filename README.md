@@ -1,6 +1,6 @@
 # Domino-in-Cpp
 
-![](https://i.imgur.com/ytQhPjt.png)
+![](https://i.imgur.com/ezqRHGU.png)
 
 Domino to jedna z najstarszych - i zarazem najprostszych pod względem reguł - gier planszowych. To gra dla osób, które nie lubią gier karcianych, więc unikają obecnych również w grze pokera i blackjacka. Nie oznacza to jednak, że w domino brakuje głębi - uważny gracz rozpozna, jakie kostki mają inni zawodnicy i wykorzysta ten fakt przeciwko nim, blokując ich lub blefując.
 ![](https://i.imgur.com/A5UGD8U.png)
@@ -40,7 +40,7 @@ Runda kończy się, gdy jedna z osób dołoży ostatnią kostkę lub gdy nikt ni
 
 Jak sugeruje nazwa, ten typ to wariant poprzedniej zabawy. W tym przypadku zawodnicy zdobywają punkty tylko, gdy wartość końcowa jest podzielna przez 5. Zdobyte na końcu rundy punkty zaokrąglamy do najbliższej piątki, w górę lub w dół. Końcowy wynik, potrzebny do zwycięstwa, wynosi z kolei 100.
 ## Plan
-Planuję zaimplementować w terminalu grę w domino każdy tryb gry będzie własną klasą. Gra będzie przeznaczona dla 2 graczy i użytkownik będzie mógł wybrać tryb gry w poczatkowym menu. Gracz będzie mógł opóścić trwającą rozgrywkę i wrócić do menu. Jeśli gra się zakończy także nastąpi powrót do menu.
+Planuję zaimplementować w terminalu grę w domino każdy tryb gry będzie własną klasą. Gra będzie przeznaczona dla 2 graczy i użytkownik będzie mógł wybrać tryb gry w poczatkowym menu. Gracz będzie mógł opuścić trwającą rozgrywkę i wrócić do menu. Jeśli gra się zakończy także nastąpi powrót do menu.
 ## Diagram klas
 
 O diagramach opowiem na 11 wykładzie. Do rysowania można użyć przeglądarkowych narzędzi typu diagrams.net czy umlet.com. Ja zacząłem używać Visual Paradigm (wymaga javy).
