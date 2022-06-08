@@ -1,4 +1,4 @@
-# Domino-in-java
+# Domino-in-Cpp
 
 ![](https://i.imgur.com/ytQhPjt.png)
 
