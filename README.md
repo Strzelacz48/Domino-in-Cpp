@@ -14,6 +14,7 @@ Celem tego wariantu gry jest pozbycie się wszystkich kostek. Zawodnik, który w
 ![](https://i.imgur.com/Sa9Jz4q.png)
 
 
+
 Z zestawu 28 unikalnych kostek każdy gracz losuje 7 z nich, a pozostałe wracają do puli. Kostki stawia się tak, aby oczka były niewidoczne dla pozostałych zawodników.
 
 Rozgrywkę rozpoczyna osoba, która wylosowała największy dublet, czyli kostkę, która ma największą identyczną liczbę oczek po dwóch stronach. Gracz kładzie kostkę na stole, a pozostali dokładają swoje kostki tak, aby stykające się pola miały taką samą liczbę oczek. Tworzy to linię gry.
@@ -43,4 +44,4 @@ Jak sugeruje nazwa, ten typ to wariant poprzedniej zabawy. W tym przypadku zawod
 Planuję zaimplementować w terminalu grę w domino każdy tryb gry będzie własną klasą. Gra będzie przeznaczona dla 2 graczy i użytkownik będzie mógł wybrać tryb gry w poczatkowym menu. Gracz będzie mógł opuścić trwającą rozgrywkę i wrócić do menu. Jeśli gra się zakończy także nastąpi powrót do menu.
 ## Diagram klas
 
-O diagramach opowiem na 11 wykładzie. Do rysowania można użyć przeglądarkowych narzędzi typu diagrams.net czy umlet.com. Ja zacząłem używać Visual Paradigm (wymaga javy).
+![](https://i.imgur.com/mn6BJCR.png)
