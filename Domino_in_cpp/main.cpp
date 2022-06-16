@@ -4,6 +4,6 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    cout << pudelko[3].gora <<" "<<pudelko[3].dol<< endl;
     return 0;
 }
