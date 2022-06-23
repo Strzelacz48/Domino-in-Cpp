@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <iostream>
+using namespace std;
 class plansza
 {
     klocek reka1[21];
@@ -8,63 +9,16 @@ class plansza
     int idx1, idx2, idxp;
 
 private:
-    bool pairSort(pair<klocek, float> &a, pair<klocek, float> &b)
-    {
-        return a.second < b.second;
-    }
+    bool pairSort(std::pair<klocek, float> &a, std::pair<klocek, float> &b);
 
 public:
-    void mieszaj(std::pair<klocek, float> *table)
-    {
-        for (int i = 0; i < 28; i++)
-        {
-            table[i].second = rand() * 100000.f;
-        }
+    void mieszaj(std::pair<klocek, float> *table);
 
-        std::sort(table, table + 28, pairSort);
-        idxp = 14;
-        idx1 = 7;
-        idx2 = 7;
-    }
+    void initPudelko(int x);
 
-    void initPudelko(int x)
-    {
-        for (int i = 0; i < x; i++)
-        {
-            for (int j = i; j < x; j++)
-                pula[i + j].first = klocek(i, j);
-        }
-    }
-
-    void dobierz(int player)
-    {
-        switch (player)
-        {
-        case 1:
-            if (idx1 >= 7 && idx1 < 21)
-            {
-                reka1[idx1] = pula[idxp].first;
-                idx1++;
-                idxp++;
-            }
-            else
-            {
-                throw std::string("Zly indeks reki gracza 1");
-            }
-        case 2:
-            if (idx2 >= 7 && idx2 < 21)
-            {
-                reka1[idx2] = pula[idxp].first;
-                idx2++;
-                idxp++;
-            }
-            else
-            {
-                throw std::string("Zly indeks reki gracza 2");
-            }
-        }
-    }
+    void dobierz(int player);
 };
+
 class Game1
 {
 public:
@@ -101,23 +55,9 @@ public:
     int dol;
 
 public:
-    klocek(int a, int b)
-    {
-        gora = a;
-        dol = b;
-    }
-    klocek &operator=(klocek &block)
-    {
-        if (this == &block)
-            return *this;
-        gora = block.gora;
-        dol = block.dol;
-        return *this;
-    }
-    void wypisz()
-    {
-        cout << gora << "|" << dol;
-    }
+    klocek(int a, int b);
+    klocek &operator=(klocek &block);
+    void wypisz();
 };
 
 class Menu
