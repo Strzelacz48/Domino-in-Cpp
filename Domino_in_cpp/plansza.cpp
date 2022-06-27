@@ -1,11 +1,43 @@
 #include "header.hpp"
 // plansza
+plansza::plansza()
+{
+    klocek reka1[21];
+    klocek reka2[21];
+    std::pair<klocek, float> pula[28];
+    int idx1, idx2, idxp;
+    initPudelko(28);
+    dobierz(1);
+    dobierz(2);
+}
 bool plansza::pairSort(std::pair<klocek, float> &a, std::pair<klocek, float> &b)
 {
     return a.second < b.second;
 }
-
-void plansza::mieszaj(std::pair<klocek, float> *table)
+void plansza::stop(int player)
+{
+    switch (player)
+    {
+    case 1:
+        cout << "Gracz 1 wygrywa";
+    case 2:
+        cout << "Gracz 2 wygrywa";
+    case 3:
+        cout << "Remis";
+    }
+    // ver 2
+    /*
+    cout<<"Gracz ";
+    switch (player)
+    {
+    case 1:
+        cout<<"1";
+    case 2:
+        cout<<"2"
+    }
+    cout<<" wygrywa";*/
+}
+/*void plansza::mieszaj(std::pair<klocek, float> *table)
 {
     for (int i = 0; i < 28; i++)
     {
@@ -16,7 +48,7 @@ void plansza::mieszaj(std::pair<klocek, float> *table)
     idxp = 14;
     idx1 = 7;
     idx2 = 7;
-}
+}*/
 
 void plansza::initPudelko(int x)
 {
@@ -56,7 +88,9 @@ void plansza::dobierz(int player)
     }
 }
 // klocek
-
+klocek::klocek()
+{
+}
 klocek::klocek(int a, int b)
 {
     gora = a;

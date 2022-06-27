@@ -1,8 +1,23 @@
 #include <algorithm>
 #include <iostream>
 using namespace std;
+
+class klocek
+{
+public:
+    int gora;
+    int dol;
+
+public:
+    klocek();
+    klocek(int a, int b);
+    klocek &operator=(klocek &block);
+    void wypisz();
+};
+
 class plansza
 {
+public:
     klocek reka1[21];
     klocek reka2[21];
     std::pair<klocek, float> pula[28];
@@ -12,11 +27,14 @@ private:
     bool pairSort(std::pair<klocek, float> &a, std::pair<klocek, float> &b);
 
 public:
+    plansza();
     void mieszaj(std::pair<klocek, float> *table);
 
     void initPudelko(int x);
 
     void dobierz(int player);
+
+    void stop(int player);
 };
 
 class Game1
@@ -24,40 +42,28 @@ class Game1
 public:
     void start();
     void settings();
-    void stop();
+    //void stop(int player);
 };
 class Game2
 {
 public:
     void start();
     void settings();
-    void stop();
+    //void stop(int player);
 };
 class Game3
 {
 public:
     void start();
     void settings();
-    void stop();
+    //void stop(int player);
 };
 class Game4
 {
 public:
     void start();
     void settings();
-    void stop();
-};
-
-class klocek
-{
-public:
-    int gora;
-    int dol;
-
-public:
-    klocek(int a, int b);
-    klocek &operator=(klocek &block);
-    void wypisz();
+    //void stop(int player);
 };
 
 class Menu
