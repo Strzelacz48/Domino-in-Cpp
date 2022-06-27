@@ -32,8 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="games.cpp" />
 		<Unit filename="header.hpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="plansza.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
