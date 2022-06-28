@@ -1,5 +1,6 @@
 #include "header.hpp"
 // plansza
+using namespace std;
 plansza::plansza()
 {
     klocek reka1[21];
@@ -54,9 +55,12 @@ void plansza::initPudelko(int x)
 {
     for (int i = 0; i < x; i++)
     {
-        for (int j = i; j < x; j++)
-            pula[i + j].first = klocek(i, j);
+        for (int j = i; j < x; j++){
+            klocek pomi = klocek(i,j);
+            pula[i + j].first = pomi;
+        }
     }
+    pula[2].second = 0.3;
 }
 
 void plansza::dobierz(int player)
