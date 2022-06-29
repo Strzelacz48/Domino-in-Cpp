@@ -30,4 +30,5 @@ public:
     void add(klocek a,int x, int y,int kierunek);
     void dobierz(int player);
     bool check(klocek a);
+    bool add2(klocek a,int x, int y,int kierunek);
 };

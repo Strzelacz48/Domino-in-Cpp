@@ -15,6 +15,21 @@ int main()
     a.add(pom,1,1,1);
     cout<<a.check(pom2)<<"\n";
     a.drukuj();
+    int pomi=0,x,y,i,j,kier;
+    bool g;
+    while(pomi!=-2)
+    {
+        cout<<"Podaj klocek i|j, x, y, kierunek, bool gora czy dol\n";
+        a.drukuj();
+        cin>>i>>j>>y>>x>>kier;
+        if(a.add2(klocek(i,j),x,y,kier))
+            cout<<"dodanie udane";
+        else
+            cout<<"nie mozna dodac";
+        cout<<"-2 wyjscie z petli";
+        cin>>pomi;
+    }
+
     /*for(int i=0;i<28;i++)
     {
         a.pula[i].wypisz();
