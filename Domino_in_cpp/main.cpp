@@ -5,10 +5,11 @@ using namespace std;
 
 int main()
 {
-    plansza a;
+    Game1 a;
+    a.start();
     // a.initPudelko(28);
     cout << "test\n";
-    klocek pom = klocek(1, 2);
+    /*klocek pom = klocek(1, 2);
     klocek pom2 = klocek(0, 1);
     a.drukuj();
     cout << "\n";

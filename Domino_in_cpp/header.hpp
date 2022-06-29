@@ -21,7 +21,7 @@ class plansza
 public:
     int board[9][9];
     klocek P1[21];
-    int idx1 = 0, idx2 = 0, idxp = 0;
+    int idx1, idx2, idxp;
     klocek P2[21];
     klocek pudelko[28] = {klocek(0, 0), klocek(0, 1), klocek(0, 2), klocek(0, 3), klocek(0, 4), klocek(0, 5), klocek(0, 6), klocek(1, 1), klocek(1, 2), klocek(1, 3), klocek(1, 4),
                           klocek(1, 5), klocek(1, 6), klocek(2, 2), klocek(2, 3), klocek(2, 4), klocek(2, 5), klocek(2, 6), klocek(3, 3), klocek(3, 4), klocek(3, 5), klocek(3, 6), klocek(4, 4),

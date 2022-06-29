@@ -11,6 +11,13 @@ plansza::plansza()
 {
     // size = 9;
     // klocek **board = new klocek *[size];
+    // initialization of P1 and P2
+
+    klocek *P1 = new klocek[21];
+    klocek *P2 = new klocek[21];
+    idx1 = 0;
+    idx2 = 0;
+    idxp = 0;
     for (int i = 0; i < 9; i++)
     {
         for (int j = 0; j < 9; j++)
@@ -205,6 +212,7 @@ void plansza::reka(int player)
         for (int i = 0; i < idx1; i++)
         {
             P1[i].wypisz();
+            cout << " ";
         }
         break;
     }
@@ -213,6 +221,7 @@ void plansza::reka(int player)
         for (int i = 0; i < idx2; i++)
         {
             P2[i].wypisz();
+            cout << " ";
         }
         break;
     }
@@ -239,4 +248,78 @@ klocek &klocek::operator=(klocek &block)
 void klocek::wypisz()
 {
     cout << gora << "|" << dol;
+}
+// Game1
+void Game1::start()
+{
+    shuffle_pudelko();
+    drukuj();
+    for (int i = 0; i < 7; i++)
+    {
+        dobierz(1);
+        dobierz(2);
+    }
+    reka(1);
+    reka(2);
+    cout << "Przed tym powinny byc wypisne tablice \n";
+    int indeks, x, y, kierunek, pom;
+    klocek a = klocek(0, 0);
+    cout << "Pierwszy gracz moze polozyc domino na planszy.\n indeks w rece: ";
+    while (true)
+    {
+        reka(1);
+        cout << "Wybierz klocek z reki gdzie go wlozyc i w ktorym kierunku(1-gora 2-lewo 3-dol 4-prawo): ";
+        cin >> indeks;
+        cout << "Czy chcesz wlozyc na gore(1) czy na dol(2): ";
+        cin >> pom;
+        if (pom == 1)
+            a = P1[indeks];
+        else
+        {
+            int pom1 = P1[indeks].dol;
+            int pom2 = P1[indeks].gora;
+            cout << "pom1 : " << pom1 << " pom2 : " << pom2 << "\n";
+            // a = klocek(pom1, pom2);
+        }
+        cin >> x >> y >> kierunek;
+        if (indeks < 0 || indeks > 21)
+        {
+            cout << "Nie ma takiego klocka" << endl;
+            continue;
+        }
+        if (add2(P1[indeks], x, y, kierunek))
+        {
+            cout << "Dodano klocek" << endl;
+            // break;
+        }
+        else
+            cout << "Nie mozna dodac klocka" << endl;
+
+        drukuj();
+        reka(2);
+        cout << "Wybierz klocek z reki gdzie go wlozyc i w ktorym kierunku(1-gora 2-lewo 3-dol 4-prawo): ";
+        cin >> indeks;
+        cout << "Czy chcesz wlozyc na gore(1) czy na dol(2): ";
+        cin >> pom;
+        if (pom == 1)
+            // a = P2[indeks];
+            // else
+            // a = klocek(board.P2[indeks].dol, board.P2[indeks].gora);
+            cin >>
+                x >> y >> kierunek;
+        if (indeks < 0 || indeks > 21)
+        {
+            cout << "Nie ma takiego klocka" << endl;
+            continue;
+        }
+        if (add2(P2[indeks], x, y, kierunek))
+        {
+            cout << "Dodano klocek" << endl;
+            // break;
+        }
+        else
+            cout << "Nie mozna dodac klocka" << endl;
+
+        drukuj();
+    }
 }
