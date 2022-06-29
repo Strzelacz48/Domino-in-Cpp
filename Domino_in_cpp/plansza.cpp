@@ -3,125 +3,122 @@
 using namespace std;
 plansza::plansza()
 {
-    size = 9;
-    klocek **board = new klocek *[size];
-    for (int i = 0; i < size; i++)
+    //size = 9;
+    //klocek **board = new klocek *[size];
+    for (int i = 0; i < 9; i++)
     {
-        board[i] = new klocek[size];
-    }
-    initPudelko(28);
-    dobierz(1);
-    dobierz(2);
-    mieszaj(pula);
-}
-bool plansza::pairSort(std::pair<klocek, float> &a, std::pair<klocek, float> &b)
-{
-    return a.second < b.second;
-}
-void plansza::mieszaj(std::pair<klocek,float> *table)
-    {
-        for(int i = 0; i < 28; i++){
-            table[i].second =  rand() * 100000.f;
-        }
-
-        std::sort(table, table + 28, pairSort );
-        idxp=14;
-        idx1=7;
-        idx2=7;
-    }
-void plansza::stop(int player)
-{
-    switch (player)
-    {
-    case 1:
-        cout << "Gracz 1 wygrywa";
-    case 2:
-        cout << "Gracz 2 wygrywa";
-    case 3:
-        cout << "Remis";
-    }
-    // ver 2
-    /*
-    cout<<"Gracz ";
-    switch (player)
-    {
-    case 1:
-        cout<<"1";
-    case 2:
-        cout<<"2"
-    }
-    cout<<" wygrywa";*/
-}
-/*void plansza::mieszaj(std::pair<klocek, float> *table)
-{
-    for (int i = 0; i < 28; i++)
-    {
-        table[i].second = rand() * 100000.f;
-    }
-
-    std::sort(table, table + 28, pairSort);
-    idxp = 14;
-    idx1 = 7;
-    idx2 = 7;
-}*/
-void plansza::reka(int player)
-{
-    switch (player)
-    {
-    case 1:
-        for (int i = 0; i < idx1 - 1; i++)
+        for(int j=0;j<9;j++)
         {
-            cout << reka1[i].gora << " | " << reka1[i].dol << ", ";
+            board[i][j]=-1;
         }
-        cout << reka1[idx1 - 1].gora << " | " << reka1[idx1 - 1].dol << "\n";
-    case 2:
-        for (int i = 0; i < idx2 - 1; i++)
-        {
-            cout << reka2[i].gora << " | " << reka2[i].dol << ", ";
-        }
-        cout << reka2[idx1 - 1].gora << " | " << reka2[idx1 - 1].dol << "\n";
     }
 }
-void plansza::initPudelko(int x)
+void plansza::drukuj()
 {
-    for (int i = 0; i < x; i++)
+    for (int i = 0; i < 9; i++)
     {
-        for (int j = i; j < x; j++)
+        cout<<" ";
+        for(int j=0;j<9;j++)
         {
-            klocek pomi = klocek(i, j);
-            pula[i + j].first = pomi;
+            if(board[i][j]!=-1)
+                cout<<board[i][j]<<" ";
+            else
+                cout<<"X ";
         }
+        cout<<"\n";
     }
-    pula[2].second = 0.3;
 }
-
+void plansza::add(klocek a,int x, int y,int kierunek)
+{
+    board[x][y]=a.gora;
+    switch (kierunek){
+        case 1://gora
+            {if(x==0)
+                throw("Wyjscie poza plansze");
+            else
+            {
+                board[x-1][y]=a.dol;
+            }
+            break;
+            }
+        case 2://lewo
+            {if(y==0)
+                throw("Wyjscie poza plansze");
+            else
+            {
+                board[x][y-1]=a.dol;
+            }
+            break;
+            }
+        case 3://dol
+            {if(x==8)
+                throw("Wyjscie poza plansze");
+            else
+            {
+                board[x+1][y]=a.dol;
+            }
+            break;
+            }
+        case 4://prawo
+            {if(y==8)
+                throw("Wyjscie poza plansze");
+            else
+            {
+                board[x][y+1]=a.dol;
+            }
+            break;
+            }
+    }
+}
 void plansza::dobierz(int player)
 {
-    switch (player)
+    switch(player)
     {
     case 1:
-        if (idx1 >= 7 && idx1 < 21)
         {
-            reka1[idx1] = pula[idxp].first;
+            P1[idx1]=pudelko[idxp];
             idx1++;
             idxp++;
         }
-        else
-        {
-            throw std::string("Zly indeks reki gracza 1");
-        }
     case 2:
-        if (idx2 >= 7 && idx2 < 21)
         {
-            reka1[idx2] = pula[idxp].first;
+            P2[idx2]=pudelko[idxp];
             idx2++;
             idxp++;
         }
-        else
+    }
+}
+bool plansza::check(klocek a)
+{
+    for(int i=0;i<9;i++)
+    {
+        for(int j=0;j<9;j++)
         {
-            throw std::string("Zly indeks reki gracza 2");
+            if(board[i][j]==a.gora)
+            {
+                if(i>=2 && board[i-1][j]==-1 && board[i-2][j]==-1)
+                    return true;
+                if(i<=6 && board[i+1][j]==-1 && board[i+2][j]==-1)
+                    return true;
+                if(j>=2 && board[i][j-1]==-1 && board[i][j-2]==-1)
+                    return true;
+                if(j<=6 && board[i][j+1]==-1 && board[i][j+2]==-1)
+                    return true;
+            }
+            if(board[i][j]==a.dol)
+            {
+                if(i>=2 && board[i-1][j]==-1 && board[i-2][j]==-1)
+                    return true;
+                if(i<=6 && board[i+1][j]==-1 && board[i+2][j]==-1)
+                    return true;
+                if(j>=2 && board[i][j-1]==-1 && board[i][j-2]==-1)
+                    return true;
+                if(j<=6 && board[i][j+1]==-1 && board[i][j+2]==-1)
+                    return true;
+            }
         }
     }
+    return false;
 }
 // klocek
 klocek::klocek()
