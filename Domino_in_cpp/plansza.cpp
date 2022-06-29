@@ -6,10 +6,18 @@ plansza::plansza()
     klocek reka1[21];
     klocek reka2[21];
     std::pair<klocek, float> pula[28];
-    int idx1, idx2, idxp;
+    int idx1, idx2, idxp, size = 9;
+    klocek **board = new klocek *[size];
+    for (int i = 0; i < size; i++)
+    {
+        board[i] = new klocek[size];
+    }
     initPudelko(28);
-    dobierz(1);
-    dobierz(2);
+    for (int i = 0; i < 7; i++)
+    {
+        dobierz(1);
+        dobierz(2);
+    }
 }
 bool plansza::pairSort(std::pair<klocek, float> &a, std::pair<klocek, float> &b)
 {
@@ -55,8 +63,9 @@ void plansza::initPudelko(int x)
 {
     for (int i = 0; i < x; i++)
     {
-        for (int j = i; j < x; j++){
-            klocek pomi = klocek(i,j);
+        for (int j = i; j < x; j++)
+        {
+            klocek pomi = klocek(i, j);
             pula[i + j].first = pomi;
         }
     }
@@ -91,6 +100,25 @@ void plansza::dobierz(int player)
         }
     }
 }
+/*   ---
+| O O |
+|  O  |
+| O O |
+| --- |
+| O O |
+| O O |
+| O O |
+  --- */
+void plansza::drukuj()
+{
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size; j++)
+        {
+            if (board)
+        }
+    }
+}
 // klocek
 klocek::klocek()
 {
@@ -99,6 +127,7 @@ klocek::klocek(int a, int b)
 {
     gora = a;
     dol = b;
+    orientx = true;
 }
 klocek &klocek::operator=(klocek &block)
 {
@@ -110,5 +139,8 @@ klocek &klocek::operator=(klocek &block)
 }
 void klocek::wypisz()
 {
-    cout << gora << "|" << dol;
+    if (orientx)
+    {
+        cout << gora << "|" << dol;
+    }
 }

@@ -7,6 +7,7 @@ class klocek
 public:
     int gora;
     int dol;
+    bool orientx;
 
 public:
     klocek();
@@ -22,6 +23,8 @@ public:
     klocek reka2[21];
     std::pair<klocek, float> pula[28];
     int idx1, idx2, idxp;
+    int size;
+    klocek **board;
 
 private:
     bool pairSort(std::pair<klocek, float> &a, std::pair<klocek, float> &b);
@@ -35,6 +38,8 @@ public:
     void dobierz(int player);
 
     void stop(int player);
+
+    void drukuj();
 };
 
 class Game1
@@ -42,28 +47,28 @@ class Game1
 public:
     void start();
     void settings();
-    //void stop(int player);
+    // void stop(int player);
 };
 class Game2
 {
 public:
     void start();
     void settings();
-    //void stop(int player);
+    // void stop(int player);
 };
 class Game3
 {
 public:
     void start();
     void settings();
-    //void stop(int player);
+    // void stop(int player);
 };
 class Game4
 {
 public:
     void start();
     void settings();
-    //void stop(int player);
+    // void stop(int player);
 };
 
 class Menu
