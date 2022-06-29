@@ -18,6 +18,17 @@ bool plansza::pairSort(std::pair<klocek, float> &a, std::pair<klocek, float> &b)
 {
     return a.second < b.second;
 }
+void plansza::mieszaj(std::pair<klocek,float> *table)
+    {
+        for(int i = 0; i < 28; i++){
+            table[i].second =  rand() * 100000.f;
+        }
+
+        std::sort(table, table + 28, pairSort );
+        idxp=14;
+        idx1=7;
+        idx2=7;
+    }
 void plansza::stop(int player)
 {
     switch (player)
