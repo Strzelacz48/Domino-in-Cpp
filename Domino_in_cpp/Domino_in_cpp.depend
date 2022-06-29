@@ -1,8 +1,14 @@
 # depslib dependency file v1.0
-1656357888 source:d:\projekty\do programowania\c i c++\domino-in-cpp\domino_in_cpp\main.cpp
+1656507193 source:d:\projekty\do programowania\c i c++\domino-in-cpp\domino_in_cpp\main.cpp
 	"header.hpp"
 
-1656360273 d:\projekty\do programowania\c i c++\domino-in-cpp\domino_in_cpp\header.hpp
+1656506503 d:\projekty\do programowania\c i c++\domino-in-cpp\domino_in_cpp\header.hpp
 	<algorithm>
 	<iostream>
+
+1656506683 source:d:\projekty\do programowania\c i c++\domino-in-cpp\domino_in_cpp\games.cpp
+	"header.hpp"
+
+1656507588 source:d:\projekty\do programowania\c i c++\domino-in-cpp\domino_in_cpp\plansza.cpp
+	"header.hpp"
 

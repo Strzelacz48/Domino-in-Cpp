@@ -3,13 +3,16 @@
 using namespace std;
 plansza::plansza()
 {
-    klocek reka1[21];
-    klocek reka2[21];
-    std::pair<klocek, float> pula[28];
-    int idx1, idx2, idxp;
+    size = 9;
+    klocek **board = new klocek *[size];
+    for (int i = 0; i < size; i++)
+    {
+        board[i] = new klocek[size];
+    }
     initPudelko(28);
     dobierz(1);
     dobierz(2);
+    mieszaj(pula);
 }
 bool plansza::pairSort(std::pair<klocek, float> &a, std::pair<klocek, float> &b)
 {
@@ -50,13 +53,31 @@ void plansza::stop(int player)
     idx1 = 7;
     idx2 = 7;
 }*/
-
+void plansza::reka(int player)
+{
+    switch (player)
+    {
+    case 1:
+        for (int i = 0; i < idx1 - 1; i++)
+        {
+            cout << reka1[i].gora << " | " << reka1[i].dol << ", ";
+        }
+        cout << reka1[idx1 - 1].gora << " | " << reka1[idx1 - 1].dol << "\n";
+    case 2:
+        for (int i = 0; i < idx2 - 1; i++)
+        {
+            cout << reka2[i].gora << " | " << reka2[i].dol << ", ";
+        }
+        cout << reka2[idx1 - 1].gora << " | " << reka2[idx1 - 1].dol << "\n";
+    }
+}
 void plansza::initPudelko(int x)
 {
     for (int i = 0; i < x; i++)
     {
-        for (int j = i; j < x; j++){
-            klocek pomi = klocek(i,j);
+        for (int j = i; j < x; j++)
+        {
+            klocek pomi = klocek(i, j);
             pula[i + j].first = pomi;
         }
     }

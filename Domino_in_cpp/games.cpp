@@ -1,5 +1,5 @@
 #include "header.hpp"
-
+/*
 void Game1::start()
 {
     if (reka1 jest pusta)
@@ -20,7 +20,7 @@ void Game1::start()
 }
 void Game1::settings()
 {
-}
+}*/
 // void Game1::stop(int player)
 // {
 //     switch (player)
@@ -42,7 +42,7 @@ void Game1::settings()
 //     }
 //     cout<<" wygrywa";*/
 // }
-void Game2::start()
+/*void Game2::start()
 {
     if (reka1 jest pusta)
     {
@@ -62,12 +62,12 @@ void Game2::start()
 }
 void Game2::settings()
 {
-}
+}*/
 // void Game2::stop()
 // {
 
 // }
-void Game3::start()
+/*void Game3::start()
 {
     if (reka1 jest pusta)
     {
@@ -90,11 +90,12 @@ void Game3::start()
 }
 void Game3::settings()
 {
-}
+}*/
 // void Game3::stop()
 // {
 
 // }
+/*
 void Game4::start()
 {
     if (reka1 jest pusta)
@@ -118,7 +119,7 @@ void Game4::start()
 }
 void Game4::settings()
 {
-}
+}*/
 // void Game4::stop()
 // {
 
