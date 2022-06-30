@@ -246,14 +246,6 @@ klocek::klocek(int a, int b)
     gora = a;
     dol = b;
 }
-klocek &klocek::operator=(klocek &block)
-{
-    if (this == &block)
-        return *this;
-    gora = block.gora;
-    dol = block.dol;
-    return *this;
-}
 void klocek::wypisz()
 {
     cout << gora << "|" << dol;
@@ -281,7 +273,7 @@ void Game1::start()
     cin >> indeks >> x >> y >> kierunek;
     a = P1[indeks];
     add(a, x, y, kierunek);
-    P1[indeks] = klocek(-1, -1);
+    P1[indeks] = help[0];
     left1--;
     drukuj();
 
@@ -305,7 +297,7 @@ void Game1::start()
         if (add2(P2[indeks], x, y, kierunek))
         {
             cout << "Dodano klocek" << endl;
-            P2[indeks] = klocek(-1, -1);
+            P2[indeks] = help[0];
             left2--;
             // break;
         }
@@ -336,7 +328,7 @@ void Game1::start()
         if (add2(P1[indeks], x, y, kierunek))
         {
             cout << "Dodano klocek" << endl;
-            P1[indeks] = klocek(-1, -1);
+            P1[indeks] = help[0];
             left1--;
             // break;
         }
@@ -375,16 +367,16 @@ void Game2::start()
     reka(2);
     // cout << "Przed tym powinny byc wypisne tablice \n";
     int indeks, x, y, kierunek, pom;
-    klocek a = klocek(0, 0);
+    klocek a(0, 0);
     // pierwszy wpis
-    reka(1);
+    //reka(1);
     cout << "Wybierz klocek z reki gdzie go wlozyc i w ktorym kierunku(1-gora 2-lewo 3-dol 4-prawo): ";
     cin >> indeks >> x >> y >> kierunek;
     a = P1[indeks];
     add(a, x, y, kierunek);
     if (suma() % 5 == 0)
-        wynik += suma;
-    P1[indeks] = klocek(-1, -1);
+        wynik1 += suma();
+    P1[indeks] = klocek(-1,-1);//help[0];
     drukuj();
     while (!end())
     {
@@ -400,9 +392,9 @@ void Game2::start()
         if (add2(P2[indeks], x, y, kierunek))
         {
             cout << "Dodano klocek" << endl;
-            P2[indeks] = klocek(-1, -1);
+            P2[indeks] = help[0];
             if (suma() % 5 == 0)
-                wynik2 += suma;
+                wynik2 += suma();
             // break;
         }
         else
@@ -422,9 +414,9 @@ void Game2::start()
         if (add2(P1[indeks], x, y, kierunek))
         {
             cout << "Dodano klocek" << endl;
-            P1[indeks] = klocek(-1, -1);
+            P1[indeks] = help[0];
             if (suma() % 5 == 0)
-                wynik1 += suma;
+                wynik1 += suma();
             // break;
         }
         else

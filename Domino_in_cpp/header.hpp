@@ -13,7 +13,6 @@ public:
 public:
     klocek();
     klocek(int a, int b);
-    klocek &operator=(klocek &block);
     void wypisz();
 };
 
@@ -43,7 +42,7 @@ class Game1 : plansza
 private:
     plansza board;
     int left1, left2;
-
+    klocek help[1]={klocek(-1,-1)};
 public:
     void start();
     bool end();
@@ -57,11 +56,11 @@ public:
 class Game2 : plansza
 {
 private:
-    plansza board;
+    plansza tabula;
     int wynik1, wynik2;
-
+    klocek help[1]={klocek(-1,-1)};
 public:
     int suma();
     void start();
     bool end();
-}
+};

@@ -2,14 +2,29 @@
 1656539895 source:d:\projekty\do programowania\c i c++\domino-in-cpp\domino_in_cpp\main.cpp
 	"header.hpp"
 
+1656543620 p"
+
 1656551671 d:\projekty\do programowania\c i c++\domino-in-cpp\domino_in_cpp\header.hpp
 	<algorithm>
 	<iostream>
 	<stdlib.h>
 	<time.h>
 
+1656551671 
+
 1656540011 source:d:\projekty\do programowania\c i c++\domino-in-cpp\domino_in_cpp\games.cpp
 
 1656543620 source:d:\projekty\do programowania\c i c++\domino-in-cpp\domino_in_cpp\plansza.cpp
 	"header.hpp"
+
+1656556922 source:/home/user/Pulpit/kody/PO/Domino-in-Cpp/Domino_in_cpp/games.cpp
+
+1656556922 source:/home/user/Pulpit/kody/PO/Domino-in-Cpp/Domino_in_cpp/main.cpp
+	"header.hpp"
+
+1656585422 /home/user/Pulpit/kody/PO/Domino-in-Cpp/Domino_in_cpp/header.hpp
+	<algorithm>
+	<iostream>
+	<stdlib.h>
+	<time.h>
 

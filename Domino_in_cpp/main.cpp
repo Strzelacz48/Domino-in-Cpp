@@ -5,6 +5,20 @@ using namespace std;
 
 int main()
 {
+    int tryb;
+    cout<< "Wybierz tryb gry: \n Domino klasyczne wygrywa 1 osoba co pozbedzie sie swojej reki[1]\n Domino na punkty zdobywa się je gdy suma oczek na planszy jest podzielna przez 5 wygrywa 1 osoba która osiągnie 100 pkt [2]";
+    cin>> tryb;
+    Game1 a;
+    Game2 b;
+    switch(tryb)
+        {
+        case 1:
+            a.start();
+            break;
+        case 2:
+            b.start();
+            break;
+        }
     Game1 a;
     a.start();
     // a.initPudelko(28);
