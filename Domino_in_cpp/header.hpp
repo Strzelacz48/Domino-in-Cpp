@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <iostream>
 #include <stdlib.h>
+#include <time.h>
 using namespace std;
 
 class klocek
@@ -41,9 +42,11 @@ class Game1 : plansza
 {
 private:
     plansza board;
+    int left1, left2;
 
 public:
     void start();
+    bool end();
     // void drukuj();
     // void add(klocek a, int x, int y, int kierunek);
     // void dobierz(int player);
@@ -51,3 +54,14 @@ public:
     // bool add2(klocek a, int x, int y, int kierunek);
     // void shuffle_pudelko();
 };
+class Game2 : plansza
+{
+private:
+    plansza board;
+    int wynik1, wynik2;
+
+public:
+    int suma();
+    void start();
+    bool end();
+}
