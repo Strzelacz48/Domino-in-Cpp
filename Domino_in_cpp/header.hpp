@@ -64,3 +64,14 @@ public:
     void start();
     bool end();
 };
+class Game3 : plansza
+{
+private:
+    plansza tabula;
+    int wynik1, wynik2;
+    klocek help[1]={klocek(-1,-1)};
+public:
+    int suma();
+    void start();
+    bool end();
+};

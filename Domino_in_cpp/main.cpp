@@ -10,6 +10,7 @@ int main()
     cin>> tryb;
     Game1 a;
     Game2 b;
+    Game3 c;
     switch(tryb)
         {
         case 1:
@@ -18,8 +19,11 @@ int main()
         case 2:
             b.start();
             break;
+        case 3:
+            c.start();
+            break;
         }
-    Game1 a;
+    //Game1 a;
     a.start();
     // a.initPudelko(28);
     cout << "test\n";
